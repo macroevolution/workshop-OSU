@@ -1,0 +1,241 @@
+rm(list = ls())#
+library(diversitree)#
+source('rabosky_functions.R')#
+#
+tree <- read.nexus('accipiters.nex')#
+x <- read.csv('accip.csv', stringsAsFactors=F)#
+states <- x$CP#
+names(states) <- x$species
+dir()
+dir()
+rm(list = ls())#
+library(diversitree)#
+source('rabosky_functions.R')
+tree <- read.nexus('accipiters.nex')#
+x <- read.csv('accip.csv', stringsAsFactors=F)#
+states <- x$CP#
+names(states) <- x$species
+colvec <- rep('white', length(states))#
+colvec[states == 1] <- 'black'#
+plot.phylo(tree, type = 'fan', show.tip.label=F)#
+tiplabels(pch=21, bg = colvec)
+colvec <- rep('white', length(states))#
+colvec[states == 1] <- 'black'#
+plot.phylo(tree, type = 'fan', show.tip.label=F)#
+tiplabels(pch=21, bg = colvec)
+sampling <- c(1, 1)#
+#
+likefunc <- make.bisse(tree, states=states, sampling.f = sampling)#
+likefunc
+like_traitd <- constrain(likefunc, mu0 ~ mu1)#
+argnames(likefunc)#
+argnames(like_traitd)
+like_con <- constrain(likefunc, mu0~mu1, lambda0~lambda1)
+res_td <- fitDiversitree(like_traitd, nopt=3)
+res_con <- fitDiversitree(like_con, nopt = 3)
+warnings()
+lr <- 2 * (res_td$loglik - res_con$loglik)
+1- pchisq(lr, df=1)
+tree <- read.nexus('accipiters.nex')#
+x <- read.csv('accip.csv', stringsAsFactors=F)#
+states <- x$CP#
+names(states) <- x$species
+tree <- read.nexus('accipiters.nex')#
+x <- read.csv('accip.csv', stringsAsFactors=F)#
+states <- x$CP#
+names(states) <- x$species
+tree
+states
+table(states)
+res <- FISSE.binary(tree, states)
+library(ape)#
+library(phangorn)#
+library(diversitree)#
+#
+source("traitDependent_functions.R")
+res <- FISSE.binary(tree, states)
+res
+table(states)
+rm(list = ls())#
+library(phytools)#
+source('rabosky_functions.R')#
+library(diversitree)#
+#
+ls()
+dir()
+rm(list = ls())#
+library(phytools)#
+source('diversification_functions.R')#
+library(diversitree)
+ls()#
+#
+# check arguments names to simulateTreee#
+args(simulateTree)
+lambda <- 1#
+mu <- 0#
+#
+tree_pb <- simulateTree(pars = c(lambda, mu), max.taxa = 100)#
+#
+plot.phylo(tree_pb, show.tip.label=F)
+tree_highE <- simulateTree(pars=c(1, 0.99), max.taxa=100)
+plot.new()#
+par(mfrow=c(1,2))#
+par(mar=c(0,0,0,0))#
+plot.phylo(tree_pb, show.tip.label=F)#
+plot.phylo(tree_highE, show.tip.label=F)
+ltt(tree_highE)
+?ltt
+fitCRBD(tree_highE)
+fitCRBD(tree_pb)
+i <- 1
+REPS <- 1000#
+x <- numeric(REPS)#
+res <- data.frame(true_lambda=x, true_mu=x, est_lambda=x, est_mu=x)
+head(res)
+cat(i, '\n')#
+#
+#	pick a lambda:	#
+	lambda <- runif(1, 0, 5)#
+#
+# pick a relative extinction rate:#
+	rel_ex <- runif(1  , 0, 0.95)
+lambda
+rel_ex
+mu <- lambda * rel_ex
+mu
+tree_sim <- simulateTree(pars=c(lambda, mu), max.taxa=100)
+tree_sim
+fit <- fitCRBD(tree_sim)
+fit
+?fitCRBD
+fitCRBD
+cat(i, '\n')#
+#
+#	pick a lambda:	#
+	lambda <- runif(1, 0, 2)#
+#
+# pick a relative extinction rate:#
+	rel_ex <- runif(1  , 0, 0.95)#
+ # calculate mu#
+	mu <- lambda * rel_ex #
+	# simulate tree:	#
+	tree_sim <- simulateTree(pars=c(lambda, mu), max.taxa=100)
+fit <- fitCRBD(tree_sim)
+fot
+fit
+REPS <- 50#
+x <- numeric(REPS)#
+res <- data.frame(true_lambda=x, true_mu=x, est_lambda=x, est_mu=x)#
+for (i in 1:REPS){#
+	cat(i, '\n')#
+#
+#	pick a lambda:	#
+	lambda <- runif(1, 0, 2)#
+#
+# pick a relative extinction rate:#
+	rel_ex <- runif(1  , 0, 0.95)#
+ # calculate mu#
+	mu <- lambda * rel_ex #
+	# simulate tree:	#
+	tree_sim <- simulateTree(pars=c(lambda, mu), max.taxa=100)#
+	fit <- fitCRBD(tree_sim)#
+	res$true_lambda[i] <- lambda#
+	res$true_mu[i] <- mu#
+#
+	res$est_lambda[i] <- fit$lambda#
+	res$est_mu[i] <- fit$mu#
+#
+}
+head(res)
+fit
+fit[1]
+res$est_lambda[i] <- fit["lambda"]#
+	res$est_mu[i] <- fit["mu"]
+REPS <- 50#
+x <- numeric(REPS)#
+res <- data.frame(true_lambda=x, true_mu=x, est_lambda=x, est_mu=x)#
+for (i in 1:REPS){#
+	cat(i, '\n')#
+#
+#	pick a lambda:	#
+	lambda <- runif(1, 0, 2)#
+#
+# pick a relative extinction rate:#
+	rel_ex <- runif(1  , 0, 0.95)#
+ # calculate mu#
+	mu <- lambda * rel_ex #
+	# simulate tree:	#
+	tree_sim <- simulateTree(pars=c(lambda, mu), max.taxa=100)#
+	fit <- fitCRBD(tree_sim)#
+	res$true_lambda[i] <- lambda#
+	res$true_mu[i] <- mu#
+#
+	res$est_lambda[i] <- fit["lambda"]#
+	res$est_mu[i] <- fit["mu"]#
+#
+}
+head(res)
+plot(res$true_lambda, res$true_mu)
+plot(res$true_lambda, res$est_lambda)
+plot(res$true_mu, res$est_mu)
+lambda <- 0.2#
+mu <- 0#
+max.t <- 25#
+REPS <- 1000#
+taxon_count <- numeric(REPS)#
+#
+simulateTree(pars = , max.t = )#
+#
+for (i in 1:REPS){#
+	cat(i, '\n')#
+	tree <- simulateTree(c(0.2, 0), max.t=25)#
+	taxon_count[i] <- length(tree$tip.label)#
+#
+}
+hist(taxon_count, breaks=100)
+mean(taxon_count)
+exp(2)
+exp(0.1 * 100)
+exp(0.2 * 100)
+loglik.purebirth <- function(lambda, phy){#
+	n <- length(phy$tip.label)#
+	ll <- (n - 2) * log(lambda) - lambda*sum(phy$edge.length) #
+	return(ll)#
+}
+loglik_purebirth <- function(lambda, phy){#
+	n <- length(phy$tip.label)#
+	ll <- (n - 2) * log(lambda) - lambda*sum(phy$edge.length) #
+	return(ll)#
+}
+loglike_purebirth <- function(lambda, phy){#
+	n <- length(phy$tip.label)#
+	ll <- (n - 2) * log(lambda) - lambda*sum(phy$edge.length) #
+	return(ll)#
+}
+source("diversification_functions.R")
+ls()
+rm(list = ls())
+source("diversification_functions.R")
+ls()
+library(ape)#
+skinktree <- read.tree('skinks216.tre')
+length(skinktree$tip.label)
+sum(skinktree$edge.length)
+lambda <- 0.001
+n <- length(skinktree$tip.label)
+sum_of_branches <- sum(skinktree$edge.length)
+loglik <- (n - 2) * log(lambda) - lambda*sum_of_branches
+loglik
+ls()  # lists all the things in your R workspace
+loglike_purebirth(skinktree, lambda = 1)
+lambda_vector <- seq(0.001, 2.0, length.out=1000)
+length(lambda_vector)
+plot(lambda_vector)
+lik_vector <- loglike_purebirth(lambda_vector, skinktree)
+plot(lik_vector ~ lambda_vector)
+lambda_vector[which(lik_vector == max(lik_vector)) ]
+ml_est <- (n - 2) / sum_of_branches
+ml_est
+plot(x = lambda_vector, y = lik_vector)#
+lines(x = c(ml_est, ml_est), y= c(-500, -4000), lwd=4, col='red')
+quit()

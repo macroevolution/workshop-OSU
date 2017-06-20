@@ -1,0 +1,28 @@
+library(BAMMtools)
+library(paleobioDB)
+install.packages('paleobioDB')
+library(paleobioDB)
+Path_base <- '~/Dropbox/workshop-corvallis/6.fossilBAMM/horses'
+Tree <- read.tree(paste(Path_base, "bamm/horse.tre", sep=""))
+Tree <- read.tree(paste(Path_base, "horse.tre", sep=""))
+Path_base <- '~/Dropbox/workshop-corvallis/6.fossilBAMM/horses/'
+Tree <- read.tree(paste(Path_base, "horse.tre", sep=""))
+Tree
+plot(Tree)
+BTs <- BAMMtools:::NU.branching.times(Tree, return.type="begin.end")
+endT <- max(BTs$end)
+tol <- 0.01
+BTs
+names(BTs)
+extant_edges <- BTs$edge[which(BTs$end >= endT - tol), 2]
+extant_tips <- BTs$tip.label[extant_edges]
+extant_tips <- gsub("_", " ", extant_tips)
+spaceNames <- gsub("_", " ", Tree$tip.label)
+Names <- paste(spaceNames, collapse=", ")
+Occs <- pbdb_occurrences(taxon_name=Names, show=c("min_ma", "max_ma"), limit="all")
+Occs
+class(Occs)
+head(Occs)
+ls()
+sessionInfo()
+? pbdb_occurrences

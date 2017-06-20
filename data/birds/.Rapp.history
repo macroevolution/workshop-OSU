@@ -1,0 +1,14 @@
+library(ape)
+balance
+dir()
+v <- read.tree('hackett_nozero.tre')
+bb <- balance(v)
+dim(bb)
+head(bb)
+rs <- rowSums(bb)
+names(rs) <- rownames(bb)
+rs[1:20]
+rs <- rs[rs >= 200 & rs <= 500]
+length(rs)
+plot(sort(rs))
+quit()

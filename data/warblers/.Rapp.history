@@ -1,0 +1,463 @@
+plot(ed)
+ls()
+shiftRegimeData(ed)
+true_lambda <- getTipRates(ed)$lambda.avg#
+		rates <- getEqualSplitsSpeciation(as.phylo(ed))
+cor.test(true_lambda, rates )
+cormat[i, 1]
+quit()
+package_string <- c("BAMMtools", "ape", "phangorn", "geiger", "diversitree", "phytools", "dev_tools", "RColorBrewer", "RPANDA", "coda", "TESS")
+install.packages(package_string)
+library(TESS)
+version
+library(TESS)
+?TESS
+lambda_fx <- function(x) return(0.1 * exp(x * -0.05))
+tvec <- seq(0, 10, length.out=100)
+rates <- lambda_fx(tvec)
+plot(rates ~ tvec)
+plot(rates ~ tvec, ylim=c(0,1))
+plot(rates ~ tvec, ylim=c(0,0.15))
+lambda_fx <- function(x) return(0.1 * exp(x * -0.1))#
+# look at the rates that this function would generate:#
+tvec <- seq(0, 10, length.out=100)#
+rates <- lambda_fx(tvec)#
+plot(rates ~ tvec, ylim=c(0,0.15))
+?tess.sim.age
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+lambda_fx <- function(x) return(0.5 * exp(x * -0.1))#
+# look at the rates that this function would generate:#
+tvec <- seq(0, 10, length.out=100)#
+rates <- lambda_fx(tvec)#
+plot(rates ~ tvec, ylim=c(0,0.15))
+plot(rates ~ tvec)
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+plot(tree)
+names(tree)
+tree
+plot(tree[[1]])
+lambda_fx <- function(x) return(0.5 * exp(x * -0.2))#
+# look at the rates that this function would generate:#
+tvec <- seq(0, 10, length.out=100)#
+rates <- lambda_fx(tvec)#
+plot(rates ~ tvec)
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+lambda_fx <- function(x) return(1 * exp(x * -0.2))#
+# look at the rates that this function would generate:#
+tvec <- seq(0, 10, length.out=100)#
+rates <- lambda_fx(tvec)#
+plot(rates ~ tvec)
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+tree
+plot(tree[[1]])
+gammaStat(tree[[1]])
+tree <- tess.sim.age(n=1, age = 10, lambda = lambda_fx, mu = 0)
+gammaStat(tree[[1]])
+plot(tree[[1]])
+tree2 <- tess.sim.taxa(n=1, nTaxa = 100, lambda = lambda_fx, mu = 0)
+?tess.sim.taxa
+tree2 <- tess.sim.taxa(n=1, nTaxa = 100, lambda = lambda_fx, mu = 0, max=100)
+tree2
+plot(tree2[[1]])
+tree2 <- tess.sim.taxa(n=1, nTaxa = 100, lambda = lambda_fx, mu = 0, max=50)
+plot(tree2[[1]])
+tree2 <- tess.sim.taxa(n=1, nTaxa = 100, lambda = lambda_fx, mu = 0, max=25)
+plot(tree2[[1]])
+gammaStat(tree2[[1]])
+max(branching.times(tree2[[1]]))
+gammaStat(trees[[1]])
+gammaStat(tree2[[1]])
+source("diversification_functions1.R")
+rm(list = ls())
+library(diversitree)
+source("diversification_functions1.R")
+tree <- read.nexus('data/accipitrids/accipiters.nex')
+getwd()
+dir()
+tree <- read.nexus('data/accipitrids/accipiters.nex')
+x <- read.csv('data/accipitrids/accip.csv', stringsAsFactors=F)
+states <- x$CP
+names(states) <- x$species
+colvec <- rep('white', length(states))#
+colvec[states == 1] <- 'black'#
+plot.phylo(tree, type = 'fan', show.tip.label=F)#
+tiplabels(pch=21, bg = colvec)
+sampling <- c(1, 1)#
+#
+likefunc <- make.bisse(tree, states=states, sampling.f = sampling)#
+likefunc
+like_traitd <- constrain(likefunc, mu0 ~ mu1)#
+argnames(likefunc)#
+argnames(like_traitd)
+like_con <- constrain(likefunc, mu0~mu1, lambda0~lambda1)
+res_td <- fitDiversitree(like_traitd, nopt=3)
+res_con <- fitDiversitree(like_con, nopt = 3)
+lr <- 2 * (res_td$loglik - res_con$loglik)
+1- pchisq(lr, df=1)
+res_td
+res$td$pars
+res_td$pars
+res <- FISSE.binary(tree, states)
+ls()
+source("traitDependent_functions.R")
+res <- FISSE.binary(tree, states)
+require("phangorh")
+require("phangorn")
+res <- FISSE.binary(tree, states)
+res
+colvec <- rep('white', length(states))#
+colvec[states == 1] <- 'black'#
+plot.phylo(tree, type = 'fan', show.tip.label=F)#
+tiplabels(pch=21, bg = colvec)
+tree.bisse
+pars <- c(lambda0 = 0.1, lambda1 = 0.3, mu0=0, mu1=0, q01 = 0.05, q10 = 0.05)
+pars
+xtree <- tree.bisse(pars, max.taxa = 100)
+xtree
+names(xtree)
+table(xtree$tip.state)
+xtree <- tree.bisse(pars, max.taxa = 200)
+table(xtree$tip.state)
+xtree <- tree.bisse(pars, max.taxa = 100)
+table(xtree$tip.state)
+xtree <- tree.bisse(pars, max.taxa = 100) #
+table(xtree$tip.state)
+states <- xtree$tip.state#
+colvec <- rep("white", length(states))#
+colvec[states == 1] <- "black"#
+#
+quartz.options(height=12, width=12)#
+plot.phylo(xtree, type = "fan", show.tip.label=F)#
+tiplabels(pch=21, bg=colvec, cex=0.8)
+res <- FISSE.binary(xtree, states)
+res
+library(HiSSE)
+library(hisse)
+tree <- read.nexus('data/accipitrids/accipiters.nex')#
+x <- read.csv('data/accipitrids/accip.csv', stringsAsFactors=F)#
+states <- x$CP #
+dff <- data.frame(sp = x$species, states = states)
+head(dff)
+dff <- data.frame(sp = x$species, states = states, stringsAsFactors=F)
+head(dff)
+table(dff$states)
+# Set up parameter identies:#
+#    here for BiSSE:#
+div.bisse <- c(1, 2)#
+#    Here for CID-2 model#
+div.cid2  <- c(1, 1, 2, 2)
+source("supporting/traitDependent_functions.R")
+source("supporting/diversification_functions1.R")
+source("supporting/traitDependent_functions.R")
+fitCID2 <- function(phy, states){#
+	rmat_hidden <- TransMatMaker(hidden.states = TRUE)#
+	# get rid of dual transitions#
+	rmat_hidden <- ParDrop(rmat_hidden, c(3, 5, 8, 10))#
+	# transitions in real character state#
+	# q01#
+	rmat_hidden["(0A)", "(1A)"] <- 1#
+	rmat_hidden["(0B)", "(1B)"] <- 1#
+	# q10 != q01#
+	rmat_hidden["(1A)", "(0A)"] <- 2#
+	rmat_hidden["(1B)", "(0B)"] <- 2#
+	# symmetric hidden state transitions#
+	rmat_hidden["(0A)", "(0B)"] <- 3#
+	rmat_hidden["(1A)", "(1B)"] <- 3#
+	rmat_hidden["(0B)", "(0A)"] <- 3#
+	rmat_hidden["(1B)", "(1A)"] <- 3#
+	dpars_cid2  <- c(1, 1, 2, 2)#
+	fit.cid2 <- try(hisse(phy, states, hidden.states=T, #
+                  turnover.anc=dpars_cid2, eps.anc=rep(1,4), #
+                  trans.rate=rmat_hidden), silent = T)#
+  	rvec <- numeric(3)#
+  	names(rvec) <- c("loglik", "AIC", "AICc")#
+ 	if (class(fit.cid2) != "try-error"){#
+ 		rvec[1] <- fit.cid2$loglik#
+ 		rvec[2] <- fit.cid2$AIC#
+ 		rvec[3] <- fit.cid2$AICc#
+ 	}else{#
+ 		rvec[1:3] <- NA#
+ 	}#
+	return(rvec)#
+}#
+#
+fitBiSSE <- function(phy, states, const = FALSE){#
+	rmat_bisse <- TransMatMaker(hidden.states = FALSE)#
+	dpars_bisse  <- c(1,2)#
+#
+	if (const){#
+		dpars_bisse <- c(1 ,1)#
+	}#
+	fit.bisse <- try(hisse(phy, states, hidden.states=F, #
+                  turnover.anc=dpars_bisse, eps.anc=c(1,1), #
+                  trans.rate=rmat_bisse), silent = T)#
+  	rvec <- numeric(3)#
+  	names(rvec) <- c("loglik", "AIC", "AICc")#
+ 	if (class(fit.bisse) != "try-error"){#
+ 		rvec[1] <- fit.bisse$loglik#
+ 		rvec[2] <- fit.bisse$AIC#
+ 		rvec[3] <- fit.bisse$AICc#
+ 	}else{#
+ 		rvec[1:3] <- NA#
+ 	}#
+	return(rvec)#
+}
+res_bisse <- fitBiSSE(tree, states)#
+#
+res_cid2 <- fitCID2(tree, states)
+res_bisse
+tree
+states
+x
+hea(x)
+head(x)
+tree <- read.nexus('data/accipitrids/accipiters.nex')#
+x <- read.csv('data/accipitrids/accip.csv', stringsAsFactors=F)#
+res_bisse <- fitBiSSE(tree, x)#
+#
+res_cid2 <- fitCID2(tree, x)
+res_bisse
+res_cid2
+quit()
+dir()
+library(BAMMtools)
+setBAMMpriors("whaletree.tre")
+v <- read.tree("whaletree.tre")
+v
+setBAMMpriors(v)
+setBAMMpriors(whales)
+whales <- read.tree("whaletree")
+whales <- read.tree("whaletree.tre")
+setBAMMpriors(whales)
+# data(mcmc.whale)
+data(mcmc.whales)
+plot(mcmc.whales$logLik)
+dim(mcmc.whales)
+mcmc.whales <- mcmc.whales[201:2000, ]
+dim(mcmc.whales)#
+mcmc.whales <- mcmc.whales[201:2000, ]#
+#
+# plot a simple MCMC trace of log-likelihoods:#
+plot(mcmc.whales$logLik)
+data(mcmc.whales)
+dim(mcmc.whales)
+# get rid of burnin#
+dim(mcmc.whales)#
+xx <- mcmc.whales[201:2000, ]
+head(xx)
+plot(xx$logLik ~ xx$generation)
+effectiveSize(xx$logLik)
+library(coda)
+effectiveSize(xx$logLik)
+effectiveSize(xx$N_shifts)
+table(xx$N_shifts ) / nrow(xx)
+plotPrior(xx)
+?computeBayesFactors
+bfmat <- computeBayesFactors(xx)
+bfmat <- computeBayesFactors(xx, expectedNumberOfShifts = 1)
+bfmat
+bfmat[, "0"]
+source("plotBFcolorMatrix.R")
+ls()
+plotBFcolorMatrix(bfmat)
+plotBFcolorMatrix(bfmat, ncols=20)
+plotBFcolorMatrix(bfmat, ncols=20, units=1)
+plotBFcolorMatrix(bfmat, ncols=20, units=2)
+data(events.whales)
+ed <- getEventData(whales, events.whales, burnin = 0.1)
+ed <- getEventData(whales, events.whales, burnin = 0.1, nsamples = 200)
+summary(ed)
+plot.bammdata(ed)
+plot.bammdata(ed, tau = 0.002)
+plot.bammdata(ed, tau = 0.002, lwd=2)
+z <- plot.bammdata(ed, tau = 0.002, lwd=2)
+addBAMMlegend(z)
+x <- subsetEventData(ed, index = 10)
+plot.bammdata(x, tau = 0.002)
+addBAMMshifts(x)
+addBAMMshifts(x, cex=2)
+plot.bammdata(x, tau = 0.002, lwd=3)
+addBAMMshifts(x, cex=2)
+x <- subsetEventData(ed, index = 20)#
+plot.bammdata(x, tau = 0.002, lwd=3)#
+addBAMMshifts(x, cex=2)
+pvec <- 1:9 * 10
+?plot.bammdata
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+for (ii in pvec){#
+	x <- subsetEventData(ed, index = ii)#
+	zcol <- plot.bammdata(x, tau = 0.002, lwd=2, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=1.5)#
+}
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec[2:9]){#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, lwd=2, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=1.5)#
+}
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec[2:9]){#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, method = "polar", lwd=2, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=1.5, par.reset=F)#
+}
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=5, par.reset=F)
+addBAMMshifts(x, cex=5, par.reset=F)
+x
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)
+ii <- 1
+x <- subsetEventData(ed, index = ii)
+x
+plot.bammdata(x, tau = 0.002, method = "polar", lwd=2, colorbreaks = zcol$colorbreaks)
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=1.5, par.reset=F)
+addBAMMshifts(x, cex=1.5, par.reset=F, method= "polar")
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec ){#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, method = "polar", lwd=1, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=2, par.reset=F, method= "polar")#
+}
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+par(mar=c(1,1,1,1))#
+#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec ){#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, method = "polar", lwd=1, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=2, par.reset=F, method= "polar")#
+}
+mtext(text = paste("sample ", ii, sep=""), side= 3)
+pvec <- 1:9 * 10#
+#
+quartz.options(height=10, width=10)#
+par(mar=c(1,1,1,1))#
+#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec ){#
+	mtext(text = paste("sample ", ii, sep=""), side= 1)#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, method = "polar", lwd=1.3, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=2, par.reset=F, method= "polar")#
+}
+quartz.options(height=10, width=10)#
+par(mar=c(1,1,1,1))#
+#
+plot.new()#
+par(mfrow=c(3,3))#
+#
+# get general color map: #
+zcol <- plot.bammdata(ed, tau = 0.002, show=F)#
+#
+for (ii in pvec ){#
+	x <- subsetEventData(ed, index = ii)#
+ 	plot.bammdata(x, tau = 0.002, method = "polar", lwd=1.3, colorbreaks = zcol$colorbreaks)#
+	addBAMMshifts(x, cex=2, par.reset=F, method= "polar")#
+	mtext(text = paste("sample ", ii, sep=""), side= 1)#
+}
+plot.phylo(whales)
+nodelabels()
+getCladeRates(ed, node = 140)
+dolphins1 <- getCladeRates(ed, node = 140)
+mean(dolphins1$lambda)
+not_dolphins <- getCladeRates(ed, node = 140, nodetype = "exclude")
+mean(not_dolphins$lambda)
+tip_lambda <- getTipRates(ed)
+dim(tip_lambda)
+tip_lambda
+tip_lambda <- tiprates$lambda_avg
+tiprates <- getTipRates(ed)#
+tip_lambda <- tiprates$lambda_avg
+plot(tip_lambda)
+tip_lambda
+tip_lambda <- tiprates$lambda.avg
+tip_lambda
+plot(tip_lambda)
+source("source('~/Dropbox/teaching/workshops/2017/OSU/draft/rfxns/supporting/traitDependent_functions.R', chdir = TRUE)")
+source("source("~/Dropbox/teaching/workshops/2017/OSU/draft/rfxns/supporting/traitDependent_functions.R")
+source("source("Dropbox/teaching/workshops/2017/OSU/draft/rfxns/supporting/traitDependent_functions.R")
+source("Dropbox/teaching/workshops/2017/OSU/draft/rfxns/supporting/traitDependent_functions.R")
+source("~/Dropbox/teaching/workshops/2017/OSU/draft/rfxns/supporting/traitDependent_functions.R")
+ls()
+es <- getEqualSplitsSpeciation(whales)
+es
+es <- es[names(tip_lambda)]
+es
+plot(es ~ tip_lambda)
+cor.test(es, tip_lambda)
+cor.test(es, tip_lambda, method="spear")
+plot(es)
+length(es)
+mean(es[45:87])
+getBranchShiftPriors(ed, 1)
+getBranchShiftPriors(ed, 1) -> z
+plot(z)
+z
+dir()
+v <- read.tree("warbs.tre")
+v
+plot(v)
+quit()
