@@ -4,7 +4,7 @@
 
 package_string <- c("BAMMtools", "ape", "phangorn", "geiger", "diversitree", 
 					"phytools", "devtools", "RColorBrewer", 
-						"RPANDA", "coda", "TESS", "paleobioDB")
+						"RPANDA", "coda", "TESS", "paleobioDB", "hisse")
 
 install.packages(package_string)
 
