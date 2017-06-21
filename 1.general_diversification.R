@@ -1,5 +1,5 @@
-source("diversification_functions1.R")
-source("traitDependent_functions.R")
+source("supporting/diversification_functions1.R")
+source("supporting/traitDependent_functions.R")
 
 #------------------------------------------------
 # Exercise 1: basic maximum likelihood inference
@@ -75,7 +75,7 @@ lines(x = c(ml_est, ml_est), y= c(-500, -4000), lwd=4, col='red')
 
 rm(list = ls())
 library(phytools)
-source('diversification_functions1.R')
+source('supporting/diversification_functions1.R')
 library(diversitree)
 
 ls()

@@ -1,7 +1,7 @@
 
-source("diversification_functions1.R")
-source("traitDependent_functions.R")
-source("rate_shift_trees.R")
+source("supporting/diversification_functions1.R")
+source("supporting/traitDependent_functions.R")
+source("supporting/simulate_shift_trees.R")
 
 #----------------------------------------------
 #   Exercise 5: Chance!
