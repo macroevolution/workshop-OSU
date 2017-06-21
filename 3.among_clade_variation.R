@@ -32,6 +32,59 @@ for (i in 1:REPS){
 hist(taxon_count, breaks=100)
 mean(taxon_count)
  
+#  
+#----------------------------------------------
+#   Exercise 5b: Colless index ** Bonus exercise! **
+#      Implement function to compute colless index
+#      Apply it to a real dataset
+#      Assess significance by simulation
+
+# Here we define the colless imbalance statistic
+colless <- function(x){
+	
+	#N <- length(x$tip.label)
+	nn <- balance(x)
+	cstat <- sum(abs(nn[,1] - nn[,2]))
+	#return(2 * cstat / ((N - 1) * (N - 2)))
+	return(cstat)
+}
+
+skinks <- read.tree("data/skinks/skinks216.tre")
+
+# this is a tree with 216 tips and is >95% complete at
+#   the species level
+
+# Now to assess significance: 
+#     Simulate trees under constant-rate model
+#     compute colless for each
+#     store value
+#  This procedure gives us a null distribution that 
+#    we can compare to the observed
+
+source("supporting/diversification_functions1.R")
+
+simulateTree(c(1,0), max.taxa = 216)
+
+null_colless <- rep(NA, 1000)
+
+for (ii in 1:1000){
+	cat(ii, "\n")
+	tree <- simulateTree(c(1,0), max.taxa = 216)
+	null_colless[ii] <- colless(tree)
+}
+
+# Plot the null distribution
+hist(null_colless, breaks=50)
+
+# Visualize: how imbalanced is the skink tree
+#    relative to the simulations under constant-rate model?
+
+obs <- colless(skinks)
+lines(x=c(obs, obs), y = c(0, 100), lwd=3, col="red")
+
+# and the pvalue, two-tailed:
+2* sum(null_colless > obs) / (1 + length(null_colless))
+
 
 
 #----------------------------------------------
@@ -123,8 +176,6 @@ for (i in 1:REPS){
 	
 	
 }
-
-
 
 
 

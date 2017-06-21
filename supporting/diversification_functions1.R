@@ -1,4 +1,4 @@
-
+require(diversitree)
 
 simulateTree <- function(pars, max.taxa = Inf, max.t=Inf, min.taxa = 2, include.extinct=F){
  
