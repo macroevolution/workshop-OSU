@@ -28,7 +28,7 @@ Welcome to the 2017 Short Course on Macroevolution.  This course will introduce 
 
 #### Friday 23 June 
 
-- fossilBAMM [script]({{ site.baseurl }}fossil-Rscripts/horse_occs.R)
+- fossilBAMM [script]({{ site.baseurl }}fossil-Rscripts/horse_occs.R) *Mitchell*
 
 ### Supporting functions
 
