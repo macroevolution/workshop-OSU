@@ -28,7 +28,7 @@ Welcome to the 2017 Short Course on Macroevolution organized by [Dan Rabosky](ht
 - Simulating trees with temporal variation in rates. [script]({{ site.baseurl }}/assets/2.temporal_variation.R)  *Rabosky*
 - Simulating trees with rate variation among clades. [script]({{ site.baseurl }}/assets/3.among_clade_variation.R)  *Rabosky*
 - Trait dependent diversification. [script]({{ site.baseurl }}/assets/4.trait-dependent-diversification.R)  *Rabosky*
-- Rate variable models in RPANDA. [pdf]({{ site.baseurl }}/assets/whaletree.tre)  *Alfaro*
+- Rate variable models in RPANDA. [pdf]({{ site.baseurl }}/assets/r-panda.html)  *Alfaro*
 
 
 
