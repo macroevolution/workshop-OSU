@@ -1,7 +1,7 @@
 
-source("supporting/diversification_functions1.R")
-source("supporting/traitDependent_functions.R")
-source("supporting/simulate_shift_trees.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/diversification_functions1.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/traitDependent_functions.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/simulate_shift_trees.R")
 
 #----------------------------------------------
 #   Exercise 5: Chance!
@@ -49,7 +49,7 @@ colless <- function(x){
 	return(cstat)
 }
 
-skinks <- read.tree("data/skinks/skinks216.tre")
+skinks <- read.tree("https://macroevolution.github.io/workshop-OSU/data/skinks/skinks216.tre")
 
 # this is a tree with 216 tips and is >95% complete at
 #   the species level
@@ -61,7 +61,7 @@ skinks <- read.tree("data/skinks/skinks216.tre")
 #  This procedure gives us a null distribution that 
 #    we can compare to the observed
 
-source("supporting/diversification_functions1.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/diversification_functions1.R")
 
 simulateTree(c(1,0), max.taxa = 216)
 
@@ -91,9 +91,9 @@ lines(x=c(obs, obs), y = c(0, 100), lwd=3, col="red")
 #   Exercise 6: Tip-specific rates!
 
 rm(list = ls())
-source("traitDependent_functions.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/traitDependent_functions.R")
 
-skinks <- read.tree("data/skinks/skinks216.tre")
+skinks <- read.tree("https://macroevolution.github.io/workshop-OSU/data/skinks/skinks216.tre")
 
 t_rates <- getEqualSplitsSpeciation(skinks)
 
@@ -114,7 +114,7 @@ tiplabels(pch=21, bg=colvec, cex=1.5)
 #----------------------------------------------
 #   Exercise 7: simulate shift trees and compute tip-specific rates
 
-source("simulate_shift_trees.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/simulate_shift_trees.R")
 library(BAMMtools)
 
 
