@@ -3,19 +3,10 @@ layout: default
 ---
 
 
-![cichlids]({{ site.baseurl }}/assets/cichlids.jpg) 
+![bammtrees]({{ site.baseurl }}/assets/whales_sepRateShiftConfigs.png) 
 
-### Pre Bootcamp workout
-Welcome to EEB 201, R Bootcamp for Ecology and Evolutionary Biology. The goal of this course is to provide a foundation for skills in scientific programming in the R environment. Check out the syllabus for more details [link].
-
-This is an intensive, high speed roller coaster type bootcamp that includes sudden and dramatic acceleration, climbing, and plotting. To prepare for the course **you must complete the following assignments *before* the workshop begins on September 14th.** These pre-assignments count for 1/3rd of your grade in course.
-
-- install [github desktop](https://desktop.github.com/) and work through the [getting started](https://help.github.com/desktop/guides/getting-started/) and [contributing to projects](https://help.github.com/desktop/guides/contributing/) tutorials. **Create a github repository for bootcamp assignments.** You will be posting all assignments to this repository and sharing it with the instructors for evaluation.
-- install [R](http://cran.r-project.org/) on your computer  along with the packages APE, GEIGER, and ggplot2. You may wish to install [R studio](https://www.rstudio.com/products/rstudio/download/), a slick IDE for R as well.
-- work through **sections 1-4 and 6** on the [Try R code schools web page](http://tryr.codeschool.com/). This page awards "badges" as you complete sections. Please **use githib to commit screenshots of your badges as you complete your work**. This will give you practice using the git version control workflow and allow us to see you progress through the exercises.
-- Once you have finished the code school exercises,  work through examples in [Primer of Ecology with R](http://link.springer.com/book/10.1007/978-0-387-89882-7), Appendix B 341-352 (skip 'Simple matrix algebra'), + optional B4, B6, B13. Do this work on a separate day to reinforce your developing programming skills.  **Use your github repo to commit your work.** There should be at least two commits for each group of exercises. 
-- If you are new to R and/or programming, have a look at [A Beginner's Guide to R](http://link.springer.com/book/10.1007/978-0-387-93837-0), Ch 1,2,3,5,6. **. This book is focused on the R environment and not on statistics and can be a handy reference when you find yourself cursing at R's idiosyncrasies.... 
-
+### Overview
+Welcome to the 2017 Short Course on Macroevolution.  This course will introduce you to several current approaches to inferring macroevolutionary dynamics with phylogenies including [BAMM](http://bamm-project.org/).
 
 
 
@@ -23,9 +14,10 @@ This is an intensive, high speed roller coaster type bootcamp that includes sudd
 
 ![National Cheese Toast Day!]({{ site.baseurl }}/assets/cheese.png)
 
-####Location: 1100 Terasaki Life Sciences Building 
+####Location: Room 032 Nash Hall 
+[map](http://oregonstate.edu/campusmap/locations/info/821)
 
-#### Wednesday 14 September
+#### Thursday 22 June
 
 - 9-9:45 Introduction to bootcamp and R [slides]({{ site.baseurl }}/assets/intro.pdf) *Alfaro, Lohmueller, Pinter-Wollman*
 - 10-10:45 Basic version control [slides]({{ site.baseurl }}/assets/git-overview.pdf) *Alfaro*
