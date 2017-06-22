@@ -14,11 +14,11 @@ Welcome to the 2017 Short Course on Macroevolution organized by [Dan Rabosky](ht
 #### Course Url: [https://tinyurl.com/osu-macro-2017](https://tinyurl.com/osu-macro-2017)
 
 #### Instructors
-[Dan Rabosky](http://www-personal.umich.edu/~drabosky/Home.html), University of Michigan
-[Michael Alfaro](http://pandorasboxfish.squarespace.com/), UCLA
-[Jonathan Mitchell](https://lsa.umich.edu/eeb/people/postdoctoral-fellows/jonsmitc.html), University of Michigan
-[Jonathan Chang](https://jonathanchang.org/), UCLA
-[Pascal Title](http://pascaltitle.weebly.com/), University of Michigan
+[Dan Rabosky](http://www-personal.umich.edu/~drabosky/Home.html), University of Michigan  
+[Michael Alfaro](http://pandorasboxfish.squarespace.com/), UCLA  
+[Jonathan Mitchell](https://lsa.umich.edu/eeb/people/postdoctoral-fellows/jonsmitc.html), University of Michigan  
+[Jonathan Chang](https://jonathanchang.org/), UCLA  
+[Pascal Title](http://pascaltitle.weebly.com/), University of Michigan  
 
 ### Schedule
 
