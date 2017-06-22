@@ -27,13 +27,14 @@ Welcome to the 2017 Short Course on Macroevolution.  This course will introduce 
 
 
 #### Friday 23 June 
-- TBA
 
+- fossilBAMM [script]({{ site.baseurl }}fossil-Rscripts/horse_occs.R)
 
 ### Supporting functions
-[diversification functions]({{ site.baseurl }}/assets/1.general_diversification.R)  
-[trait dependent functions]({{ site.baseurl }}//assets/diversification_functions1.R) 
-[shift tree simulator]({{ site.baseurl }}//assets/simulate_shift_trees.R)
+
+- [diversification functions]({{ site.baseurl }}/assets/1.general_diversification.R)
+- [trait dependent functions]({{ site.baseurl }}/supporting/traitDependent_functions.R)
+- [shift tree simulator]({{ site.baseurl }}/supporting/simulate_shift_trees.R)
 
 ### Datasets 
 
@@ -107,12 +108,11 @@ Welcome to the 2017 Short Course on Macroevolution.  This course will introduce 
 *  [whales/whaletree.tre]({{ site.baseurl }}/data/whales/whaletree.tre)
 
 
-###Miscellany
+### Miscellany
 
 - [r reference card]({{ site.baseurl }}/assets/refcard.pdf)
 - [r markdown cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 - [dplyr and tidyr reference card](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-- 
 
 
 
