@@ -7,7 +7,7 @@
 # 
 
 library(BAMMtools)
-whales <- read.tree("whaletree.tre")
+whales <- read.tree("https://macroevolution.github.io/workshop-OSU/data/whales/whaletree.tre")
 
 
 # Now we use setBAMMpriors to match the scale of priors

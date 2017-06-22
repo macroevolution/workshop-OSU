@@ -9,7 +9,7 @@ library(ape)
 library(phangorn)
 library(diversitree)
 
-source("supporting/traitDependent_functions.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/traitDependent_functions.R")
 
 tree          <- read.tree("example_tree.tre")
 xx            <- read.csv("example_trait.csv", header=F)
@@ -102,12 +102,12 @@ res <- FISSE.binary(xtree, states)
 
 rm(list = ls())
 library(diversitree)
-source("supporting/diversification_functions1.R")
-source("supporting/traitDependent_functions.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/diversification_functions1.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/traitDependent_functions.R")
 
 
-tree <- read.nexus('data/accipitrids/accipiters.nex')
-x <- read.csv('data/accipitrids/accip.csv', stringsAsFactors=F)
+tree <- read.nexus('https://macroevolution.github.io/workshop-OSU/data/accipitrids/accipiters.nex')
+x <- read.csv('https://macroevolution.github.io/workshop-OSU/data/accipitrids/accip.csv', stringsAsFactors=F)
 states <- x$CP
 names(states) <- x$species
 
@@ -173,8 +173,8 @@ library(hisse)
 
 # Revisiting the accipiter (hawk) example:
 
-tree <- read.nexus('data/accipitrids/accipiters.nex')
-x <- read.csv('data/accipitrids/accip.csv', stringsAsFactors=F)
+tree <- read.nexus('https://macroevolution.github.io/workshop-OSU/data/accipitrids/accipiters.nex')
+x <- read.csv('https://macroevolution.github.io/workshop-OSU/data/accipitrids/accip.csv', stringsAsFactors=F)
  
  
 # We will fit BiSSE and the CID2 models using a wrapping function
