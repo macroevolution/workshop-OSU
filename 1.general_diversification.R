@@ -1,11 +1,11 @@
-source("supporting/diversification_functions1.R")
-source("supporting/traitDependent_functions.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/diversification_functions1.R")
+source("https://macroevolution.github.io/workshop-OSU/supporting/traitDependent_functions.R")
 
 #------------------------------------------------
 # Exercise 1: basic maximum likelihood inference
  
 library(ape)
-skinktree <- read.tree('data/skinks/skinks216.tre')
+skinktree <- read.tree('https://macroevolution.github.io/workshop-OSU/data/skinks/skinks216.tre')
 
 # dir(...) prints out files in current directory
 # getwd(...) tells you what directory you are in
@@ -75,7 +75,7 @@ lines(x = c(ml_est, ml_est), y= c(-500, -4000), lwd=4, col='red')
 
 rm(list = ls())
 library(phytools)
-source('supporting/diversification_functions1.R')
+source('https://macroevolution.github.io/workshop-OSU/supporting/diversification_functions1.R')
 library(diversitree)
 
 ls()

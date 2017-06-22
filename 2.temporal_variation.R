@@ -6,11 +6,11 @@
 #----------------------------------------------
 # Exercise 4: Gamma statistic
  
-warbs <- read.tree("data/warblers/warbs.tre")
+warbs <- read.tree("https://macroevolution.github.io/workshop-OSU/data/warblers/warbs.tre")
 
 gammaStat(warbs) 
 
-skinks <- read.tree("data/skinks/skinks216.tre")
+skinks <- read.tree("https://macroevolution.github.io/workshop-OSU/data/skinks/skinks216.tre")
 gammaStat(skinks)
 
 
