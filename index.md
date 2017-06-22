@@ -13,7 +13,7 @@ Welcome to the 2017 Short Course on Macroevolution.  This course will introduce 
 ### Schedule
 
 
-####Location: Room 032 Nash Hall 
+#### Location: Room 032 Nash Hall 
 [map](http://oregonstate.edu/campusmap/locations/info/821)
 
 #### Thursday 22 June
