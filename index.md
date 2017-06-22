@@ -9,7 +9,7 @@ layout: default
 Welcome to the 2017 Short Course on Macroevolution.  This course will introduce you to several current approaches to inferring macroevolutionary dynamics with phylogenies including [BAMM](http://bamm-project.org/).
 
 
-
+#### Course Url: [https://tinyurl.com/osu-macro-2017](https://tinyurl.com/osu-macro-2017)
 ### Schedule
 
 
