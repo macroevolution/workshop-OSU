@@ -6,12 +6,20 @@ layout: default
 ![bammtrees]({{ site.baseurl }}/assets/whales_sepRateShiftConfigs.png) 
 
 ### Overview
-Welcome to the 2017 Short Course on Macroevolution.  This course will introduce you to several current approaches to inferring macroevolutionary dynamics with phylogenies including [BAMM](http://bamm-project.org/).
+Welcome to the 2017 Short Course on Macroevolution organized by [Dan Rabosky](http://www-personal.umich.edu/~drabosky/Home.html) (University of Michigan) and [Brian Sidlauskas](http://people.oregonstate.edu/~sidlausb/) (OSU).  This course will introduce you to several current approaches to inferring macroevolutionary dynamics with phylogenies including [BAMM](http://bamm-project.org/).
 
 #### Location: Room 032 Nash Hall 
 [map](http://oregonstate.edu/campusmap/locations/info/821)
 
 #### Course Url: [https://tinyurl.com/osu-macro-2017](https://tinyurl.com/osu-macro-2017)
+
+#### Instructors
+[Dan Rabosky](http://www-personal.umich.edu/~drabosky/Home.html), University of Michigan
+[Michael Alfaro](http://pandorasboxfish.squarespace.com/), UCLA
+[Jonathan Mitchell](https://lsa.umich.edu/eeb/people/postdoctoral-fellows/jonsmitc.html), University of Michigan
+[Jonathan Chang](https://jonathanchang.org/), UCLA
+[Pascal Title](http://pascaltitle.weebly.com/), University of Michigan
+
 ### Schedule
 
 #### Thursday 22 June
