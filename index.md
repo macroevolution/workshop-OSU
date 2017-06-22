@@ -10,16 +10,18 @@ Welcome to the 2017 Short Course on Macroevolution.  This course will introduce 
 
 
 
-###Schedule
+### Schedule
 
-![National Cheese Toast Day!]({{ site.baseurl }}/assets/cheese.png)
 
 ####Location: Room 032 Nash Hall 
 [map](http://oregonstate.edu/campusmap/locations/info/821)
 
 #### Thursday 22 June
 
-- 9-9:45 Introduction to bootcamp and R [slides]({{ site.baseurl }}/assets/intro.pdf) *Alfaro, Lohmueller, Pinter-Wollman*
+- R basics. [script]({{ site.baseurl }}/assets/1.general_diversification.R) [diversification functions] ({{ site.baseurl }}//assets/diversification_functions1.R) [trait dependent functions]({{ site.baseurl }}//assets/traitDependent_functions.R) [shift tree simulator]({{ site.baseurl }}//assets/simulate_shift_trees.R)
+- 
+
+ *Rabosky*
 - 10-10:45 Basic version control [slides]({{ site.baseurl }}/assets/git-overview.pdf) *Alfaro*
 	- [simple guide to git](http://git.huit.harvard.edu/guide/)
 	- [git cheat sheet]({{ site.baseurl }}/assets/git_cheat_sheet.pdf)
