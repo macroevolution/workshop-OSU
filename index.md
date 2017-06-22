@@ -8,13 +8,11 @@ layout: default
 ### Overview
 Welcome to the 2017 Short Course on Macroevolution.  This course will introduce you to several current approaches to inferring macroevolutionary dynamics with phylogenies including [BAMM](http://bamm-project.org/).
 
+#### Location: Room 032 Nash Hall 
+[map](http://oregonstate.edu/campusmap/locations/info/821)
 
 #### Course Url: [https://tinyurl.com/osu-macro-2017](https://tinyurl.com/osu-macro-2017)
 ### Schedule
-
-
-#### Location: Room 032 Nash Hall 
-[map](http://oregonstate.edu/campusmap/locations/info/821)
 
 #### Thursday 22 June
 
