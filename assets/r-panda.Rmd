@@ -59,6 +59,9 @@ nodelabels(cex = 0.5)
 ```
 
 
+## Rate varying functions
+
+Here we define four functions that describe how $/lambda$ and $/mu$ can change over time. We will use these functions to visualize rate change over time AND we will pass them to RPANDA to evaluate the likelihood of the whale tree under them below.
 
 ```{r}
 lambda.cst <- function(x,y){y}
@@ -298,7 +301,7 @@ legend("topleft",legend=c("Balaenopteridae","Delphinidae","Phocoenidae","Ziphida
 # Challenge
 
 1. Fit models using RPANDA for the **entire** whale phylogeny, and
-   plot its diversity through time using parts of the previous codes
+   plot its diversity through time using parts of the previous code
    chunks.
 
 
