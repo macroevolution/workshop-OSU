@@ -1,5 +1,4 @@
 rm(list=ls())
-setwd("~/Dropbox/workshop-corvallis/6.fossilBAMM/salamander")
 
 library(BAMMtools)
 

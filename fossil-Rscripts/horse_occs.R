@@ -35,5 +35,9 @@ Names <- paste(spaceNames, collapse=", ")
 
 Occs <- pbdb_occurrences(taxon_name=Names, show=c("min_ma", "max_ma"), limit="all")
 
-                   
+### Check for duplicated taxon-location records
+taxon_location <- apply(Occs, 1, function(x) paste(x["oid"], x["mna"], collapse="_"))                  
+taxon_location[duplicated(taxon_location)]
 
+### That's zero, so each taxon is recorded as occuring at each site only once! So
+numOccs <- length(taxon_location)
